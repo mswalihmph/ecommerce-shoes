@@ -6,7 +6,7 @@ const state={
 
 
 module.exports.connect=function(done){
-    const url='mongodb://localhost:27017';
+    const url=;
     const dbname='shopping'
     MongoClient.connect(url).then(
         (client)=>{
