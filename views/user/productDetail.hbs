@@ -1,0 +1,46 @@
+  <link rel="stylesheet" href="/stylesheets/detail.css">
+  <section>
+    <div class="container flex">
+      <div class="left">
+        <div class="main_image">
+          <img src="/images/productImages/{{product._id}}.jpg" class="slide">
+        </div>
+        <div class="option flex">
+          <img src="/images/productImages/{{product._id}}.jpg" onclick="img('image/p1.jpg')">
+        </div>
+      </div>
+      <div class="right">
+        <h3>{{product.pname}}</h3>
+        <h4>MRP {{product.price}}</h4>
+        <p>{{product.discription}} </p>
+        <h5>Color-Rose Gold</h5>
+        <div class="color flex1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h5>Number</h5>
+        <div class="add flex1">
+          <span onclick="changeQuantity('{{product._id}}','{{user._id}}',-1)">-</span>
+          <label id="{{product._id}}">{{quantity}}</label>
+          <span onclick="changeQuantity('{{product._id}}','{{user._id}}',+1)">+</span>
+        </div>
+
+        <button onclick="addToCart('{{product._id}}')">Add to Bag</button>
+      </div>
+    </div>
+  </section>
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.home');
+      line.style.background = change;
+    }
+  </script>

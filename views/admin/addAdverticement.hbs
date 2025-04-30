@@ -1,0 +1,26 @@
+<div class="w-[50%] ml-10 mt-10 border-blue-300 border-4 text-center">
+    <div class="p-6">
+        <div class="img hidden">
+            <img src="" alt="image">
+        </div>
+        <div class="addr ">
+            <h1 class=" font-serif font-black">FILL YOUR ADVERTICEMENT DETAILS</h1>
+            <form class="w-[70%]" action="/admin/addAdverticement" method="post" enctype="multipart/form-data">
+                <div>
+                    <label class="block" for="pname">Name Of Product</label>
+                    <input class=" border-blue-300 border-2 pl-3" id="pname" name="pname" type="text">
+                </div>
+                <div>
+                    <label class="block" for="discription">Discription</label>
+                    <input class=" border-blue-300 border-2 pl-3" id="discription" name="discription" type="text">
+                </div>
+                <div>
+                    <label class="block" for="files">Chose A file</label>
+                    <input id="files" name="files" type="file">
+                </div>
+                <DIv><button type="submit" class="p-4 bg-orange-200 border-blue-300 border-2">Add</button></DIv>
+
+            </form>
+        </div>
+    </div>
+</div>

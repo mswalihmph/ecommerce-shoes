@@ -1,0 +1,32 @@
+<container class=" ">
+
+    <table class=" m-2 mt-5 w-10/12 bg-blue-100 text-center border-y-4 ml-16 border-black ">
+        <tr class=" bg-blue-200 ">
+            <th class="border-black border-y-2 p-4">Name</th>
+            <th class="border-black border-2 p-4">catogory</th>
+            <th class="border-black border-2 p-4">price</th>
+            <th class="border-black border-y-2 p-4">image</th>
+        </tr>
+        {{#each cartItems}}
+        <tr>
+            
+            <td class="border-black border-y-2">{{this.products.pname}} </td>
+            <td class="border-black border-2">{{this.products.catogory}}</td>
+            <td class="border-black border-2">Rs:{{this.products.price}}</td>
+          
+            <td class="border-black border-y-2 flex justify-around"><img class="w-[50px] h-[50px] inline"
+                    src="/images/productImages/{{this.prodid}}.jpg" alt="image">
+                <div class="inline">
+                    <button class="p-2 bg-slate-400 text-black font-bold" onclick="changeQuantity('{{this.prodid}}','{{../user}}',+1)">+</button>
+                    <span id="{{this.prodid}}"  class="p-2 m-2 bg-slate-400 text-black font-bold">{{this.quantity}} </span>
+                    <button class="p-2 m-2 bg-slate-400 text-black font-bold" onclick="changeQuantity('{{this.prodid}}','{{../user}}',-1)">-</button>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+
+    </table>
+    <hr>
+    <h1 class="float-right pl-[50%] mr-60  font-bold ">total amount :Rs <span id="total">{{total}}</span></h1>
+    <button class="border-blue-200 bg-blue-500 text-white font-bold rounded-lg p-4 mt-4 float-right mr-60 "> <a href="/placeOrder/{{user}}">Order place</a></button>
+</container>

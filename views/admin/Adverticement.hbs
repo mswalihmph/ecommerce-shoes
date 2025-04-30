@@ -1,0 +1,23 @@
+<section class="bg-blue-100 h-[100vh]">
+    <a href="/admin/addAdverticement" class="bg-blue-900 text-white rounded-lg p-4 mb-4 ml-[80%]">add product</a>
+    <table class="m-2 mt-5 w-10/12 bg-blue-100 text-center border-y-4 ml-16 border-black ">
+            <tr class=" bg-blue-200 ">
+            <th class="border-black border-y-2 p-4">Name of product </th>
+            <th class="border-black border-2 p-4">description</th>
+            <th class="border-black border-y-2 p-4">image</th>
+        </tr>
+        </tr>
+        {{#each product}}
+        <tr>
+            <td class="border-black border-y-2">{{this.pname}} </td>
+            <td class="border-black border-2">{{this.discription}}</td>
+            <td class="border-black border-y-2 flex justify-evenly"><img class="w-[50px] h-[50px] inline"
+                    src="/images/adverticemente/{{this._id}}.jpg" alt="image">
+                    <div><button class=" ml-2 p-2 bg-blue-200 border-2 border-white rounded-lg"><a href="/admin/changeAdd/{{this._id}}">change</a></button>
+                    <button class=" ml-2 p-2 bg-red-300 border-2 border-white rounded-lg"><a href="/admin/deleteAdd/{{this._id}}" onclick="return confirm('are you sure to delete')">Delete</a></button></td></div>
+                    
+        </tr>
+        {{/each}}
+    </table>
+
+</section>

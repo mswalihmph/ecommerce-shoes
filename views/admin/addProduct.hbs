@@ -1,0 +1,39 @@
+
+<div class="w-[50%]  border-blue-300 border-4" style="margin-left: 25%;text-align: center;margin-top:100px;">
+    <div class="flex " style="padding:20px 10px 20px 10px;background-color:rgba(243, 243, 243, 0.76)">
+
+        <div class="addr ">
+            <h1 class=" font-serif font-black">FILL YOUR PRODUCT DETAILS</h1>
+            <form class="w-[70%]" action="/admin/addProduct" method="post" enctype="multipart/form-data">
+                <div>
+                    <label class="block" for="pname">Name Of Product</label>
+                    <input class=" border-blue-300 border-2 pl-3" id="pname" name="pname"  type="text">
+                </div>
+                <div class="flex">
+                    <div class="flex-col">
+                        <label for="catogory">Catogory</label>
+                        <input class=" border-blue-300 border-2 pl-3" id="catogory"  name="catogory" type="text">
+                    </div>
+                    <div class="flex-col">
+                        <label for="price">Price</label>
+                        <input class=" border-blue-300 border-2 pl-3" id="price" name="price" type="number">
+                    </div>
+                </div>
+                <div>
+                    <label class="block" for="discription">Discription</label>
+                    <textarea style="width: 390px;padding:20px;resize:none;overflow-y:auto;" class=" border-blue-300 border-2 pl-3" id="text-box" name="discription" rows="3" cols="20"></textarea>
+                </div>
+                <div class="mt-5">
+                    <label class="block" for="files">Chose A file</label>
+                    <input class="mt-5" id="files" name="files" type="file" onchange="fileAdd(event)">
+                </div>
+                <DIv><button type="submit" class="p-2 bg-orange-200 border-blue-300 border-2 rounded-lg px-9 mt-5">competed</button></DIv>
+
+            </form>
+        </div>
+        <div class="img">
+            <img id="addimage" src="" alt="image" style="display:none;height:100%;padding-left:10px;">
+        </div>
+
+    </div>
+</div>

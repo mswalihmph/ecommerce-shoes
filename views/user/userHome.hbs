@@ -1,0 +1,63 @@
+<div class="container">
+    <div style="width: 100vw; overflow:hidden;" class="slider-wrap flex relative">
+        {{#each ads}} 
+            <div style="width: 100vw;flex-shrink: 0; transition:transform 2s;transform:translateX(0*100%);" class="slider-item relative h-80">
+                <img class="slider-img h-80" style="width:90%;padding-left:5%;padding-right:5%;" src="/images/adverticemente/{{this._id}}.jpg" alt="">
+                <div class="slide-content" style="position: absolute;background-color:rgba(255, 255, 255, 0.438); top:30%;left:0;padding-left:100px;color:black;">
+                    <h1 class="title" style="font-size: xx-large;font-weight: 700;">{{this.pname}}</h1>
+                    <p class="description" style="font-size: larger;margin-bottom: 20px;max-width: 300px;">{{this.discription}}</p>
+                    <a href="/productDetail/{{this._id}}"><span class="button border-2 border-white rounded-md" style="transition: transform 2s;
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    cursor: pointer;">Shop Now</span></a>
+                </div>
+            </div>
+        {{/each}}
+        
+
+
+    <div class="absolute flex items-center justify-between p-4" style="position: absolute;left:0;top:40%; width:100vw">
+    <button onclick="prevSlide()" class="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button onclick="nextSlide()" class="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+        <div class="indicator" style="display:flex;justify-content: center;padding-top:10px;">
+            {{#each ads}}
+            <div onclick="updateIndicator({{@index}})" class="indicator-item rounded-full" style="width: 10px;
+    height: 10px;margin-left:5px;
+    background-color:white;border-color: black;
+    border-width: medium;"></div>
+            {{/each}}
+        </div>
+
+
+
+    <section style="padding: 20px;" class=" md:p-0 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-6 2xl:grid-cols-4 gap-10 items-start ">
+        {{#each product}}
+        <section class="p-2 w-52 py-5 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer" >
+          <div onclick="window.location.href='/productDetail/{{this._id}}'">  <img src="/images/productImages/{{this._id}}.jpg" alt="">
+            <h1 class="text-xl my-2">{{this.pname}}</h1>
+            <p class="mb-5">{{this.catogory}}</p>
+            <h2 class="font-semibold mb-5">Rs:{{this.price}}</h2></div>
+            <button onclick="addToCart('{{this._id}}')"
+                class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">Add To Cart</button>
+        </section>
+        {{/each}}
+    </section>
+</div>

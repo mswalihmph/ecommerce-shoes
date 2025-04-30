@@ -1,0 +1,29 @@
+{
+  "name": "express-hbs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "watch": "tailwindcss -i ./public/stylesheets/style.css -o ./public/stylesheets/output.css --watch",
+    "dev": "concurrently \"npm run start\" \"npm run watch\""
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "concurrently": "^9.1.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.21.2",
+    "express-fileupload": "^1.5.1",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+    "hbs": "^4.2.0",
+    "http-errors": "~1.6.3",
+    "mongodb": "^6.12.0",
+    "morgan": "~1.9.1",
+    "nocache": "^4.0.0",
+     "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+   
+  }
+}

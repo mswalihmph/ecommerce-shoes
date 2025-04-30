@@ -1,0 +1,58 @@
+<section>
+    <section>
+        <form action="" id="checkout">
+        <input type="" name="userId" value="{{userId}}" class="hidden">
+    <div class="flex  w-[60%] m-10 border-2 border-black">
+        <div class="w-[50%] m-4 border-2 border-black text-center">
+            <h1 class=" font-bold text-xl">ENTER YOUR LOCATION DETAILS</h1>
+            <label for="address">address</label>
+            <input class="block m-2 ml-[10%] w-[75%] border-2" type="text" name="address">
+            <label  for="district">district</label>
+            <input class="block m-2 ml-[10%] w-[75%] border-2" type="text" name="district">
+            <label for="state">state</label>
+            <input class="block m-2 ml-[10%] w-[75%] border-2" type="text" name="state">
+            <label for="pincode">pincode</label>
+            <input class="block m-2 ml-[10%] w-[75%] border-2" type="number" name="pinode">
+            <label for="number">mmoble number</label>
+            <input class="block m-2 ml-[10%] w-[75%] border-2" type="number" name="number">
+        </div>
+        <div class="m-4 border-2 pl-4 w-[45%]">
+            <h1 class="font-bold text-xl mt-4">total amount : Rs {{total}}</h1>
+            <input type="" name="total" value="{{total}}" class="hidden">
+            <div class=" font-medium text-lg mt-4"> <p >Payment Method</p>
+            <hr>
+        <label class="block mt-2" for="cod">
+            <input type="radio" name="payment-method" value="COD">COD
+        </label>
+        <label class="block mt-2" for="online">
+            <input type="radio" name="payment-method" value="online payment">Online Payment
+        </label></div>
+           <button class="p-2 rounded-lg m-4 bg-blue-600 text-white">checkout</button>
+        </div>
+        </div>  
+        </form>
+    </section>
+</section>
+<script>
+   const form= document.getElementById('checkout')
+   let data={}
+        form.addEventListener('submit',(event)=>{
+            event.preventDefault()
+            const formData=new FormData(form)
+            for(const[key,value] of formData){
+                data[key]=value
+               
+            }
+            
+            fetch('/placeOrder',{
+                method:'POST',
+                headers:{
+                        "Content-Type":"application/json",
+                         },
+                body:JSON.stringify(data)
+            }).then((res)=> res.json()).then((response)=>{
+                console.log(response)
+                alert(response) 
+            })
+        })
+</script>
